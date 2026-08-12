@@ -8,15 +8,21 @@
   layout and structure as closely as possible, per the brief:
   https://linkopingsciencepark.se/eudis-hackathon-linkoping/
 
-  Only the items the brief calls out as changes have been swapped:
-  1. Logos (host + partner) — DCU:Innovate placeholders, pending Drive folder
-  2. Copy — Sweden > Ireland, dates, venue, contact (first draft)
-  3. Challenge 3 — placeholder, pending client's Notion brief
-  4. Challenge/hero images — the Sweden page uses a fighter-jet photo and a
-     Saab logo; replaced with neutral placeholders per the "no overt military
-     imagery" instruction. Real stock photography still needed.
-  5. Registration — CTA is "Register >" throughout (no pre-register step,
-     per client note); link target pending from client.
+  Content updated per client doc "Hackathon 2026 - Landing Page - DCU: Innovate Hub"
+  (5 sections: partners/sponsors, prize/support copy, why-attend/process/eligibility,
+  Challenge 3 — Department of Defence Challenge, and contacts). Note: that doc's
+  dates (apply by 15 Sept, event runs 15–17 OCTOBER) supersede the original brief's
+  "15–17 September" — flagged to the client for confirmation.
+
+  Still outstanding:
+  1. Partner/sponsor logo files — have names only (Section 1), tiles are
+     text placeholders until actual logo files arrive
+  2. Registration link — CTA text is "Register today!" per client's own
+     annotation on the reference page; link target still pending
+  3. Challenge 3 image — copy is now final; stock photo still needed
+     (no overt military imagery per client's imagery guidance)
+  4. Missing emails for the Partnerships/Press contacts (Section 5) —
+     listed as name + org only, no email fabricated
 
   Font (Source Sans 3), colours, spacing, button and section styles are
   copied from the live Linköping page's computed styles, not reinvented.
@@ -201,10 +207,20 @@
       font-weight: 400;
       margin-bottom: 24px;
     }
-    .logo-row{ display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+    .logo-tier{ margin-bottom: 30px; }
+    .logo-tier:last-child{ margin-bottom: 0; }
+    .logo-tier-label{
+      font-family: "Source Code Pro", monospace;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #999;
+      margin-bottom: 14px;
+    }
+    .logo-row{ display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
     .logo-tile{
-      width: 150px;
-      height: 70px;
+      min-width: 150px;
+      height: 60px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -213,10 +229,10 @@
       color: #8a7a70;
       font-family: "Source Code Pro", monospace;
       font-size: 11px;
-      text-transform: uppercase;
       text-align: center;
-      padding: 6px;
+      padding: 6px 10px;
     }
+    .logo-tile.tile-empty{ color: #c9b8ae; font-style: italic; }
 
     /* Generic content section — bottom-only padding matches the live page's
        rhythm exactly (measured: 0 top / 69.6px bottom, no double-gap between stacked sections) */
@@ -262,6 +278,8 @@
       font-size: 20px;
       color: #fff;
     }
+    .challenge-card ul{ padding-left: 22px; margin: 0 0 8px; list-style-type: square; font-size: 15.4px; }
+    .challenge-card ul li{ margin-bottom: 4px; }
 
     .btn-primary{
       display: inline-flex;
@@ -307,24 +325,11 @@
        between stacked content sections */
     .section-cta + .section{ padding-top: 70px; }
 
-    /* Contact */
-    .contact-card{ display: flex; align-items: center; gap: 24px; max-width: 460px; margin: 0 auto; }
-    .contact-photo{
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      background: #F6EAE6;
-      flex-shrink: 0;
-      overflow: hidden;
-    }
-    .contact-photo img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+    /* Contact — three text-only entries (no photos), per client's Section 5 note
+       that they'll field a broad mix of participant/partnership/press queries */
     .contact-card .top-title{ font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: #999; margin-bottom: 4px; }
-    .contact-card h3{ margin-bottom: 4px; }
+    .contact-card h3{ margin-bottom: 4px; font-size: 19px; }
+    .contact-card p{ margin-bottom: 0; }
     .contact-card a{ color: var(--accent); text-decoration: none; }
 
     @media (max-width: 700px){
@@ -386,7 +391,7 @@
         <li><a href="#information">Information</a></li>
         <li><a href="#challenges">Challenges</a></li>
         <li><a href="#ip">IP</a></li>
-        <li><a href="#register" class="btn-ghost"><!-- TODO: registration link from client -->Register &gt;</a></li>
+        <li><a href="#register" class="btn-ghost"><!-- TODO: registration link from client -->Register today!</a></li>
       </ul>
     </div>
   </header>
@@ -399,20 +404,41 @@
       <h1>EUDIS Defence Hackathon 2026 — Ireland</h1>
       <p class="lead">EUDIS Defence Hackathon &amp; Mentorship Programme 2026, in Dublin.<br><br>
         <!-- TODO: confirm exact on-campus venue and application deadline --> Applications open now — register today!</p>
-      <a href="#" id="register" class="btn-ghost"><!-- TODO: registration link from client -->Register &gt;</a>
+      <a href="#" id="register" class="btn-ghost"><!-- TODO: registration link from client -->Register today!</a>
     </div>
   </section>
 
-  <!-- PARTNER LOGOS -->
+  <!-- PARTNER LOGOS — from client doc Section 1. Names only so far; tiles are
+       text placeholders until actual logo files arrive. Client noted more
+       partners may be added, so left room to grow (rows of 5). -->
   <section class="section-logos">
     <div class="container">
-      <p class="section-title">In Partnership with</p>
-      <div class="logo-row">
-        <!-- TODO: replace all tiles with real logos from client's Drive folder -->
-        <div class="logo-tile">DCU:Innovate</div>
-        <div class="logo-tile">Partner logo</div>
-        <div class="logo-tile">Partner logo</div>
-        <div class="logo-tile">Partner logo</div>
+      <p class="section-title">With the support of</p>
+
+      <div class="logo-tier">
+        <p class="logo-tier-label">Sponsors</p>
+        <div class="logo-row">
+          <div class="logo-tile">Department of Defence</div>
+          <div class="logo-tile">Deloitte Ireland</div>
+          <div class="logo-tile tile-empty">Final prize sponsor — TBC</div>
+        </div>
+      </div>
+
+      <div class="logo-tier">
+        <p class="logo-tier-label">Event Partners</p>
+        <div class="logo-row">
+          <div class="logo-tile">Irish Space Association</div>
+          <div class="logo-tile">Drone Space</div>
+          <div class="logo-tile">Defence Forces RTI</div>
+          <div class="logo-tile">Space Industry Skillnet</div>
+          <div class="logo-tile">TensorX</div>
+          <div class="logo-tile">Enterprise Ireland</div>
+          <div class="logo-tile">Defence Tech Cluster Ireland</div>
+          <div class="logo-tile">Fulcrum</div>
+          <div class="logo-tile">Visiativ</div>
+          <div class="logo-tile">Aquaguard Technologies</div>
+          <div class="logo-tile">Ubotica</div>
+        </div>
       </div>
     </div>
   </section>
@@ -421,7 +447,7 @@
   <section class="section" id="information">
     <div class="container container-xs section-header">
       <h2>Autonomy on the battlefield</h2>
-      <p class="lead">We're looking for innovative teams and individuals interested in participating in this hackathon.<br><br>
+      <p class="lead">We're looking for innovative teams and individuals interested in participating in Ireland's first ever Defence Hackathon.<br><br>
       Winners get selected for the EUDIS Mentoring Programme.</p>
     </div>
     <div class="container">
@@ -429,18 +455,20 @@
         <div class="col-3 card-col">
           <h3>Why attend?</h3>
           <ul>
-            <li>Be one of <strong>50 participants</strong> for this exclusive hackathon in partnership with industry, university and innovation-ecosystem partners. Surrounded by <strong>mentors</strong> — business coaches, innovation experts, and domain experts in technology and application.</li>
-            <li>The winning team is granted prize money of <strong>€10,000</strong> and selected for the <a href="https://eudis-hackathon.eu/mentorship/" target="_blank" rel="noopener">EUDIS Mentoring Programme</a>, with extended possibilities and 40 hours of coaching included (winner selected by jury).</li>
+            <li>Be one of <strong>100+ participants</strong> for Ireland's first ever Defence Hackathon, in partnership with industry, academia, the Irish Defence Forces and the wider Irish deep-tech innovation ecosystem. You'll be surrounded by <strong>mentors</strong> with deep domain expertise across military end users, startup advisory, venture capital, AI, spacetech, advanced drone technology and advanced manufacturing.</li>
+            <li>Teams will be competing for a <strong>€20,000 prize fund</strong>: 1st place €10,000 and selection for the <a href="https://eudis-hackathon.eu/mentorship/" target="_blank" rel="noopener">EUDIS Mentoring Programme</a> (winner chosen by a jury of leading Irish defence-tech experts), 2nd place €6,000, 3rd place €3,500. Multiple teams can also avail of follow-on supports to keep developing their projects afterwards.</li>
+            <li>Curated and selected teams will be invited to a number of <strong>drone workshops</strong> in the weeks before the hackathon, to help advance their ideas ahead of the event.</li>
+            <li>Follow-on supports available to competing teams include: free incubation space in DCU:Innovate Hub, facilitation toward ESA BIC and other non-dilutive startup funding, test &amp; validation opportunities with the Defence Forces Research Technology &amp; Innovation unit, post-hackathon AI compute and model-hosting credits from TensorX, and access to the Deloitte Technology Fast 50 programme.</li>
           </ul>
         </div>
         <div class="col-3 card-col">
           <h3>Process</h3>
           <ul>
-            <li><strong>Applications</strong> are open now — register today. <!-- TODO: confirm deadline -->[deadline TBC]</li>
-            <li>Be selected and attend <strong>physically at DCU, Dublin</strong>.</li>
-            <li>On <strong>15–17 September 2026</strong> (2.5 days).</li>
-            <li>Pick one of the three challenges to work on, in a team of at least 2 people.</li>
-            <li>Join with or without an existing idea, prototype or MVP (clearly stating what existed before and what was developed during the hackathon).</li>
+            <li><strong>Applications</strong> are open now — deadline is <strong>15 September 2026</strong>.</li>
+            <li>Be selected and attend <strong>physically at DCU:Innovate Hub, Glasnevin, Dublin</strong>.</li>
+            <li>Hackathon spans <strong>15–17 October 2026</strong> (2.5 days), with a wrap-up networking party at the end.</li>
+            <li>Pick one of the three challenges to work on, in a team of <strong>minimum 3, maximum 10</strong> people.</li>
+            <li>As part of the selection process, we'll favour existing ideas, prototypes or MVPs (clearly stating what existed before and what was developed during the hackathon).</li>
           </ul>
         </div>
         <div class="col-3 card-col">
@@ -449,7 +477,7 @@
             <li><strong>18+ years old</strong></li>
             <li>Citizens of the <strong>EU</strong>, <strong>Norway</strong> or <strong>Ukraine</strong></li>
             <li>Able to participate on-site for the full duration</li>
-            <li>Part of a team (minimum 2 members) before the competition begins</li>
+            <li>Part of a team (minimum 3 members) before the competition begins</li>
           </ul>
           <p class="eligibility-note">⚠️ <strong>Eligibility verification:</strong> identification documents will be checked on-site. Failure to provide valid proof of citizenship may result in disqualification.</p>
         </div>
@@ -476,10 +504,21 @@
           <h3>2. Coordination of Autonomous Swarms</h3>
           <p>Affordable, scalable early-warning and detection solutions for low-altitude drone threats — robust in adverse weather and complex terrain, with faster decision loops and fewer false alarms.</p>
         </div>
-        <div class="col-3 challenge-card pending">
-          <div class="challenge-media">Coming soon</div>
-          <h3><!-- TODO: title from client's Notion brief -->3. Local Challenge — Ireland</h3>
-          <p><!-- TODO: copy from client's Notion "EUDIS Defence Hackathon 2026 — IRELAND" brief -->Full details for Ireland's local challenge are being finalised with our partners and will be added ahead of client review.</p>
+        <div class="col-3 challenge-card">
+          <div class="challenge-media"><!-- TODO: licensed stock image — sense of maritime/satellite tech, no overt military imagery -->Image pending</div>
+          <h3>3. Department of Defence Challenge</h3>
+          <p><strong>Space-Enabled Maritime Domain Awareness.</strong> Develop an autonomous or AI-enabled capability that uses data from space and/or remote sensors to detect, monitor, interpret or predict activity in real time within the maritime environment. Solutions may focus on:</p>
+          <ul>
+            <li>Protection of critical undersea infrastructure</li>
+            <li>Detection of suspicious maritime behaviour</li>
+            <li>Autonomous surveillance of large ocean areas</li>
+            <li>Space-enabled intelligence, surveillance and reconnaissance</li>
+            <li>AI-assisted interpretation of satellite imagery</li>
+            <li>Maritime anomaly detection</li>
+            <li>Predictive risk modelling</li>
+            <li>Multi-domain data fusion</li>
+            <li>Decision support for commanders and operators</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -511,7 +550,7 @@
     <div class="section-bg" aria-hidden="true"></div>
     <div class="container container-sm">
       <h2>We're looking forward to your application!</h2>
-      <a href="#"><!-- TODO: registration link from client --><span class="btn-ghost">Register &gt;</span></a>
+      <a href="#"><!-- TODO: registration link from client --><span class="btn-ghost">Register today!</span></a>
     </div>
   </section>
 
@@ -521,13 +560,29 @@
       <h2>Contact</h2>
       <p class="lead">For questions, feel free to reach out:</p>
     </div>
-    <div class="container container-xs">
-      <div class="contact-card">
-        <div class="contact-photo"><img src="assets/kevin-littlewood.webp" alt="Kevin Littlewood"></div>
-        <div>
-          <p class="top-title">DCU:Innovate</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-3 contact-card">
+          <p class="top-title">Event Details</p>
           <h3>Kevin Littlewood</h3>
+          <p>DCU:Innovate Hub</p>
           <a href="mailto:kevin.littlewood@dcu.ie">kevin.littlewood@dcu.ie</a>
+        </div>
+        <div class="col-3 contact-card">
+          <p class="top-title">Partnerships</p>
+          <h3>Ronan Furlong</h3>
+          <p>DCU:Innovate Hub</p>
+          <h3 style="margin-top: 12px;">Patricia Moore</h3>
+          <p>Irish Space Association</p>
+          <!-- TODO: email addresses not supplied by client for these contacts -->
+        </div>
+        <div class="col-3 contact-card">
+          <p class="top-title">Press Queries</p>
+          <h3>Ronan Cunningham</h3>
+          <p>DCU</p>
+          <h3 style="margin-top: 12px;">Sarah Langrell</h3>
+          <p>Department of Defence</p>
+          <!-- TODO: email addresses not supplied by client for these contacts -->
         </div>
       </div>
     </div>
