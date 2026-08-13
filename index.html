@@ -191,7 +191,7 @@
     }
     .hero .container{ position: relative; z-index: 1; }
     .hero h1{ color: #fff; }
-    .hero .lead{ color: rgba(255,255,255,0.85); font-size: 26.4px; max-width: 700px; margin: 13.2px auto 30px; }
+    .hero .lead{ color: rgba(255,255,255,0.85); font-size: 26.4px; max-width: 900px; margin: 13.2px auto 30px; }
     .hero .btn-ghost{ color: #fff; margin-top: 10px; }
     .hero .btn-ghost:hover{ background: #fff; color: #000; }
 
@@ -253,6 +253,11 @@
     .section{ padding: 0 0 70px; }
     .section-header{ text-align: center; margin-bottom: 35px; }
     .section-header .lead{ max-width: 700px; margin: 12px auto 0; }
+    /* Bullet lists read poorly centered — left-align this block within the
+       otherwise-centered header, same max-width as the lead above it */
+    .intro-extra{ max-width: 700px; margin: 20px auto 0; text-align: left; }
+    .intro-extra ul{ padding-left: 26.4px; margin: 12px 0 0; list-style-type: square; }
+    .intro-extra li{ padding-left: 8.8px; margin-bottom: 8px; }
 
     .card-col{
       background: #fff;
@@ -446,7 +451,7 @@
           <div class="logo-tile has-logo"><img src="assets/logo-spaceindustryskillnet.jpg" alt="Space Industry Skillnet"></div>
           <div class="logo-tile has-logo"><img src="assets/logo-tensorx.svg" alt="TensorX"></div>
           <div class="logo-tile has-logo"><img src="assets/logo-enterpriseireland.png" alt="Enterprise Ireland"></div>
-          <div class="logo-tile">Defence Tech Cluster Ireland</div>
+          <div class="logo-tile has-logo"><img src="assets/logo-defencetechcluster.png" alt="Defence Tech Cluster Ireland" style="height: 60px;"></div>
           <div class="logo-tile has-logo"><img src="assets/logo-fulcrum.svg" alt="Fulcrum" style="height: 34px;"></div>
           <div class="logo-tile has-logo"><img src="assets/logo-visiativ.svg" alt="Visiativ" style="height: 34px;"></div>
           <div class="logo-tile has-logo"><img src="assets/logo-aquaguard.png" alt="Aquaguard Technologies"></div>
@@ -468,8 +473,17 @@
   <section class="section" id="information">
     <div class="container container-xs section-header">
       <h2>Autonomy on the battlefield</h2>
-      <p class="lead">We're looking for innovative teams and individuals interested in participating in Ireland's first ever Defence Hackathon.<br><br>
-      Winners get selected for the EUDIS Mentoring Program.</p>
+      <p class="lead">We're looking for innovative teams and individuals interested in participating in Ireland's first ever Defence Hackathon.</p>
+      <div class="intro-extra">
+        <p>Teams will be competing for a €20k prize fund, with winners also getting selected for the EUDIS Mentoring Program. There are also a range of follow-on support services available to competing teams, including:</p>
+        <ul>
+          <li>Free incubation space in DCU:Innovate Hub</li>
+          <li>Facilitation toward ESA BIC and other non-dilutive startup funding mechanisms</li>
+          <li>Test &amp; validation opportunities with the Defence Forces Research Technology &amp; Innovation unit</li>
+          <li>Post-hackathon AI compute and model hosting credits from TensorX</li>
+          <li>Access to the Deloitte Technology Fast 50 programme</li>
+        </ul>
+      </div>
     </div>
     <div class="container">
       <div class="row">
@@ -479,7 +493,6 @@
             <li>Be one of <strong>100+ participants</strong> for Ireland's first ever Defence Hackathon, in partnership with industry, academia, the Irish Defence Forces and the wider Irish deep-tech innovation ecosystem. You'll be surrounded by <strong>mentors</strong> with deep domain expertise across military end users, startup advisory, venture capital, AI, spacetech, advanced drone technology and advanced manufacturing.</li>
             <li>Teams will be competing for a <strong>€20,000 prize fund</strong>: 1st place €10,000 and selection for the <a href="https://eudis-hackathon.eu/mentorship/" target="_blank" rel="noopener">EUDIS Mentoring Program</a> (winner chosen by a jury of leading Irish defence-tech experts), 2nd place €6,000, 3rd place €3,500. Multiple teams can also avail of follow-on supports to keep developing their projects afterwards.</li>
             <li>Curated and selected teams will be invited to a number of <strong>drone workshops</strong> in the weeks before the hackathon, to help advance their ideas ahead of the event.</li>
-            <li>Follow-on supports available to competing teams include: free incubation space in DCU:Innovate Hub, facilitation toward ESA BIC and other non-dilutive startup funding, test &amp; validation opportunities with the Defence Forces Research Technology &amp; Innovation unit, post-hackathon AI compute and model-hosting credits from TensorX, and access to the Deloitte Technology Fast 50 programme.</li>
           </ul>
         </div>
         <div class="col-3 card-col">
@@ -593,10 +606,10 @@
           <p class="top-title">Partnerships</p>
           <h3>Ronan Furlong</h3>
           <p>DCU:Innovate Hub</p>
+          <a href="mailto:ronan.furlong@dcu.ie">ronan.furlong@dcu.ie</a>
           <h3 style="margin-top: 12px;">Patricia Moore</h3>
           <p>Irish Space Association</p>
           <a href="mailto:patricia.moore@irishspaceassociation.ie">patricia.moore@irishspaceassociation.ie</a>
-          <!-- TODO: email address not supplied by client for Ronan Furlong -->
         </div>
         <div class="col-3 contact-card">
           <p class="top-title">Press Queries</p>
@@ -605,7 +618,7 @@
           <a href="mailto:ronan.cunningham@dcu.ie">ronan.cunningham@dcu.ie</a>
           <h3 style="margin-top: 12px;">Sarah Langrell</h3>
           <p>Department of Defence</p>
-          <!-- TODO: email address not supplied by client for Sarah Langrell -->
+          <a href="mailto:Sarah.Langrell@defence.ie">Sarah.Langrell@defence.ie</a>
         </div>
       </div>
     </div>
