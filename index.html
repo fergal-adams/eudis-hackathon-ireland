@@ -275,6 +275,10 @@
     .eligibility-note{ font-size: 15.4px; color: #555; }
 
     .challenge-card{ text-align: left; }
+    /* Titles wrap to 1 or 2 lines depending on length (Challenge 2's is
+       longest) - reserve height for 2 lines on all three so the paragraphs
+       below start at the same point regardless of title length */
+    .challenge-card h3{ min-height: 53px; }
     .challenge-media{
       aspect-ratio: 4/3;
       background: #F6EAE6;
@@ -436,8 +440,9 @@
       <div class="logo-tier">
         <p class="logo-tier-label">Sponsors</p>
         <div class="logo-row">
-          <div class="logo-tile has-logo"><img src="assets/logo-dept-defence.png" alt="Department of Defence / An Roinn Cosanta" style="height: 46px; max-height: none;"></div>
-          <div class="logo-tile has-logo"><img src="assets/logo-deloitte.webp" alt="Deloitte Ireland" style="height: 24px; max-height: none;"></div>
+          <div class="logo-tile has-logo"><img src="assets/logo-dept-defence.png" alt="Department of Defence / An Roinn Cosanta" style="height: 60px; max-height: none;"></div>
+          <div class="logo-tile has-logo"><img src="assets/logo-deloitte.webp" alt="Deloitte Ireland" style="height: 32px; max-height: none;"></div>
+          <div class="logo-tile has-logo"><img src="assets/logo-tensorx.svg" alt="TensorX" style="height: 62px;"></div>
           <div class="logo-tile tile-empty">Final prize sponsor — TBC</div>
         </div>
       </div>
@@ -449,12 +454,9 @@
           <div class="logo-tile has-logo"><img src="assets/logo-dronespace.png" alt="Drone Space Ltd"></div>
           <div class="logo-tile has-logo"><img src="assets/logo-defenceforcesrti.png" alt="Defence Forces RTI Unit / Óglaigh na hÉireann"></div>
           <div class="logo-tile has-logo"><img src="assets/logo-spaceindustryskillnet.jpg" alt="Space Industry Skillnet"></div>
-          <div class="logo-tile has-logo"><img src="assets/logo-tensorx.svg" alt="TensorX"></div>
           <div class="logo-tile has-logo"><img src="assets/logo-enterpriseireland.png" alt="Enterprise Ireland"></div>
-          <div class="logo-tile has-logo"><img src="assets/logo-defencetechcluster.png" alt="Defence Tech Cluster Ireland" style="height: 60px;"></div>
           <div class="logo-tile has-logo"><img src="assets/logo-fulcrum.svg" alt="Fulcrum" style="height: 34px;"></div>
           <div class="logo-tile has-logo"><img src="assets/logo-visiativ.svg" alt="Visiativ" style="height: 34px;"></div>
-          <div class="logo-tile has-logo"><img src="assets/logo-aquaguard.png" alt="Aquaguard Technologies"></div>
           <div class="logo-tile has-logo"><img src="assets/logo-ubotica.svg" alt="Ubotica"></div>
           <div class="logo-tile has-logo"><img src="assets/logo-xyz3d.jpg" alt="XYZ3D"></div>
         </div>
@@ -480,8 +482,8 @@
           <li>Free incubation space in DCU:Innovate Hub</li>
           <li>Facilitation toward ESA BIC and other non-dilutive startup funding mechanisms</li>
           <li>Test &amp; validation opportunities with the Defence Forces Research Technology &amp; Innovation unit</li>
-          <li>Post-hackathon AI compute and model hosting credits from TensorX</li>
-          <li>Access to the Deloitte Technology Fast 50 programme</li>
+          <li>Post-hackathon AI compute credits from TensorX</li>
+          <li>Exposure to the Deloitte Technology Fast 50 programme</li>
         </ul>
       </div>
     </div>
@@ -490,17 +492,17 @@
         <div class="col-3 card-col">
           <h3>Why attend?</h3>
           <ul>
-            <li>Be one of <strong>100+ participants</strong> for Ireland's first ever Defence Hackathon, in partnership with industry, academia, the Irish Defence Forces and the wider Irish deep-tech innovation ecosystem. You'll be surrounded by <strong>mentors</strong> with deep domain expertise across military end users, startup advisory, venture capital, AI, spacetech, advanced drone technology and advanced manufacturing.</li>
-            <li>Teams will be competing for a <strong>€20,000 prize fund</strong>: 1st place €10,000 and selection for the <a href="https://eudis-hackathon.eu/mentorship/" target="_blank" rel="noopener">EUDIS Mentoring Program</a> (winner chosen by a jury of leading Irish defence-tech experts), 2nd place €6,000, 3rd place €3,500. Multiple teams can also avail of follow-on supports to keep developing their projects afterwards.</li>
+            <li>Be one of <strong>100+ participants</strong> for Ireland's first ever Defence Hackathon, in partnership with industry, academia, the Irish Defence Forces and the wider Irish deep-tech innovation ecosystem. You'll be surrounded by mentors with deep domain expertise across military end users, startup advisory, venture capital, AI, spacetech, advanced drone technology and advanced manufacturing.</li>
+            <li>Teams will be competing for a <strong>€20,000 prize fund</strong>: 1st place €10,000 and selection for the <a href="https://eudis-hackathon.eu/mentorship/" target="_blank" rel="noopener">EUDIS Mentoring Program</a> (winner chosen by a jury of leading Irish defence-tech experts), 2nd place €6,000, 3rd place €4,000. Multiple teams can also avail of follow-on supports to keep developing their projects afterwards.</li>
             <li>Curated and selected teams will be invited to a number of <strong>drone workshops</strong> in the weeks before the hackathon, to help advance their ideas ahead of the event.</li>
           </ul>
         </div>
         <div class="col-3 card-col">
           <h3>Process</h3>
           <ul>
-            <li><strong>Applications</strong> are open now — deadline is <strong>15 September 2026</strong>.</li>
-            <li>Be selected and attend <strong>physically at DCU:Innovate Hub, Glasnevin, Dublin</strong>.</li>
-            <li>Hackathon spans <strong>15–17 October 2026</strong> (2.5 days), with a wrap-up networking party at the end.</li>
+            <li>Applications are open now — deadline is <strong>15 September 2026</strong>.</li>
+            <li>Be selected and attend physically at DCU:Innovate Hub, Glasnevin, Dublin.</li>
+            <li>Hackathon spans 15–17 October 2026 (2.5 days), with a wrap-up networking party at the end.</li>
             <li>Pick one of the three challenges to work on, in a team of <strong>minimum 3, maximum 10</strong> people.</li>
             <li>As part of the selection process, we'll favour existing ideas, prototypes or MVPs (clearly stating what existed before and what was developed during the hackathon).</li>
           </ul>
@@ -508,7 +510,7 @@
         <div class="col-3 card-col">
           <h3>Who can apply?</h3>
           <ul>
-            <li><strong>18+ years old</strong></li>
+            <li>18+ years old</li>
             <li>Citizens of the <strong>EU</strong>, <strong>Norway</strong> or <strong>Ukraine</strong></li>
             <li>Able to participate on-site for the full duration</li>
             <li>Part of a team (minimum 3 members) before the competition begins</li>
@@ -541,7 +543,7 @@
         <div class="col-3 challenge-card">
           <div class="challenge-media"><img src="assets/challenge-3-maritime-v2.png" alt="Maritime domain awareness monitoring dashboard with ship tracking"></div>
           <h3>3. Department of Defence Challenge</h3>
-          <p><strong>Space-Enabled Maritime Domain Awareness.</strong> Develop an autonomous or AI-enabled capability that uses data from space and/or remote sensors to detect, monitor, interpret or predict activity in real time within the maritime environment. Solutions may focus on:</p>
+          <p>Space-Enabled Maritime Domain Awareness. Develop an autonomous or AI-enabled capability that uses data from space and/or remote sensors to detect, monitor, interpret or predict activity in real time within the maritime environment. Solutions may focus on:</p>
           <ul>
             <li>Protection of critical undersea infrastructure</li>
             <li>Detection of suspicious maritime behaviour</li>
