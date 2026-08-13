@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,300&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
-  <meta name="description" content="EUDIS Defence Hackathon & Mentorship Programme 2026, hosted by DCU:Innovate in Dublin. Register now to take part.">
+  <meta name="description" content="EUDIS Defence Hackathon & Mentorship Programme 2026, hosted by DCU:Innovate in Dublin. Register today to take part.">
   <style>
     :root{
       --dark: #1a1c22;
@@ -122,7 +122,6 @@
       transition: color 0.25s ease;
     }
     .site-header.scrolled .logo-addon-text{ color: rgba(255,255,255,0.7); }
-    .logo-addon strong{ display: block; font-size: 14px; color: var(--heading); }
     .nav-main{
       display: flex;
       align-items: center;
@@ -216,6 +215,11 @@
       margin-bottom: 14px;
     }
     .logo-row{ display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    /* Event Partners: fixed rows of 5, per client's stated layout preference
+       ("3 rows of 5 partners logos I reckon"), with room left to grow */
+    .logo-row-5{ display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; max-width: 900px; margin: 0 auto; }
+    .logo-row-5 .logo-tile{ min-width: 0; }
+    @media (max-width: 700px){ .logo-row-5{ grid-template-columns: repeat(2, 1fr); } }
     .logo-tile{
       min-width: 150px;
       height: 60px;
@@ -231,6 +235,15 @@
       padding: 6px 10px;
     }
     .logo-tile.tile-empty{ color: #c9b8ae; font-style: italic; }
+    /* Real logo supplied — plain white tile, no placeholder chrome, image scaled to fit */
+    .logo-tile.has-logo{ background: #fff; border: 1px solid #eee; padding: 10px 14px; }
+    .logo-tile.has-logo img{ max-width: 100%; max-height: 100%; object-fit: contain; }
+
+    /* Official compliance marks (EU Presidency associated event, EU funding
+       acknowledgment) — shown plain, no tile chrome, matching how these
+       marks are conventionally displayed */
+    .compliance-row{ display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px; margin-top: 30px; }
+    .compliance-row img{ height: 48px; width: auto; }
 
     /* Generic content section — bottom-only padding matches the live page's
        rhythm exactly (measured: 0 top / 69.6px bottom, no double-gap between stacked sections) */
@@ -373,7 +386,7 @@
   <header class="site-header">
     <div class="container">
       <div class="logo-group">
-        <img class="eudis-logo" src="assets/eudis-hackathon-logo.webp" alt="EUDIS Hackathon">
+        <img class="eudis-logo" src="assets/eudis-hackathon-badge.png" alt="EUDIS Hackathon">
         <div class="logo-addon">
           <span class="logo-addon-text">Facilitated by</span>
           <a href="https://dcuinnovate.com" aria-label="DCU:Innovate">
@@ -397,11 +410,10 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg" aria-hidden="true"></div>
-    <!-- TODO: replace with licensed hero photography — sense of collaboration/tech, no overt military references -->
     <div class="container">
       <h1>EUDIS Defence Hackathon 2026 — Ireland</h1>
       <p class="lead">EUDIS Defence Hackathon &amp; Mentorship Programme 2026, in Dublin.<br><br>
-        <!-- TODO: confirm exact on-campus venue and application deadline --> Applications open now — register today!</p>
+        Applications open now — register today!</p>
       <a href="#" id="register" class="btn-ghost"><!-- TODO: registration link from client -->Register today!</a>
     </div>
   </section>
@@ -416,7 +428,7 @@
       <div class="logo-tier">
         <p class="logo-tier-label">Sponsors</p>
         <div class="logo-row">
-          <div class="logo-tile">Department of Defence</div>
+          <div class="logo-tile has-logo"><img src="assets/logo-dept-defence.png" alt="Department of Defence / An Roinn Cosanta"></div>
           <div class="logo-tile">Deloitte Ireland</div>
           <div class="logo-tile tile-empty">Final prize sponsor — TBC</div>
         </div>
@@ -424,11 +436,11 @@
 
       <div class="logo-tier">
         <p class="logo-tier-label">Event Partners</p>
-        <div class="logo-row">
+        <div class="logo-row logo-row-5">
           <div class="logo-tile">Irish Space Association</div>
-          <div class="logo-tile">Drone Space</div>
+          <div class="logo-tile has-logo"><img src="assets/logo-dronespace.png" alt="Drone Space Ltd"></div>
           <div class="logo-tile">Defence Forces RTI</div>
-          <div class="logo-tile">Space Industry Skillnet</div>
+          <div class="logo-tile has-logo"><img src="assets/logo-spaceindustryskillnet.jpg" alt="Space Industry Skillnet"></div>
           <div class="logo-tile">TensorX</div>
           <div class="logo-tile">Enterprise Ireland</div>
           <div class="logo-tile">Defence Tech Cluster Ireland</div>
@@ -438,6 +450,13 @@
           <div class="logo-tile">Ubotica</div>
         </div>
       </div>
+
+      <!-- Official marks — supplied alongside the partner logos, not part of
+           the client's original Section 1 list. Flagged to confirm inclusion. -->
+      <div class="compliance-row">
+        <img src="assets/logo-eu-presidency-associated-event.png" alt="Associated Event of Ireland's EU Presidency 2026">
+        <img src="assets/logo-funded-by-eu.png" alt="Funded by the European Union">
+      </div>
     </div>
   </section>
 
@@ -446,7 +465,7 @@
     <div class="container container-xs section-header">
       <h2>Autonomy on the battlefield</h2>
       <p class="lead">We're looking for innovative teams and individuals interested in participating in Ireland's first ever Defence Hackathon.<br><br>
-      Winners get selected for the EUDIS Mentoring Programme.</p>
+      Winners get selected for the EUDIS Mentoring Program.</p>
     </div>
     <div class="container">
       <div class="row">
@@ -454,7 +473,7 @@
           <h3>Why attend?</h3>
           <ul>
             <li>Be one of <strong>100+ participants</strong> for Ireland's first ever Defence Hackathon, in partnership with industry, academia, the Irish Defence Forces and the wider Irish deep-tech innovation ecosystem. You'll be surrounded by <strong>mentors</strong> with deep domain expertise across military end users, startup advisory, venture capital, AI, spacetech, advanced drone technology and advanced manufacturing.</li>
-            <li>Teams will be competing for a <strong>€20,000 prize fund</strong>: 1st place €10,000 and selection for the <a href="https://eudis-hackathon.eu/mentorship/" target="_blank" rel="noopener">EUDIS Mentoring Programme</a> (winner chosen by a jury of leading Irish defence-tech experts), 2nd place €6,000, 3rd place €3,500. Multiple teams can also avail of follow-on supports to keep developing their projects afterwards.</li>
+            <li>Teams will be competing for a <strong>€20,000 prize fund</strong>: 1st place €10,000 and selection for the <a href="https://eudis-hackathon.eu/mentorship/" target="_blank" rel="noopener">EUDIS Mentoring Program</a> (winner chosen by a jury of leading Irish defence-tech experts), 2nd place €6,000, 3rd place €3,500. Multiple teams can also avail of follow-on supports to keep developing their projects afterwards.</li>
             <li>Curated and selected teams will be invited to a number of <strong>drone workshops</strong> in the weeks before the hackathon, to help advance their ideas ahead of the event.</li>
             <li>Follow-on supports available to competing teams include: free incubation space in DCU:Innovate Hub, facilitation toward ESA BIC and other non-dilutive startup funding, test &amp; validation opportunities with the Defence Forces Research Technology &amp; Innovation unit, post-hackathon AI compute and model-hosting credits from TensorX, and access to the Deloitte Technology Fast 50 programme.</li>
           </ul>
