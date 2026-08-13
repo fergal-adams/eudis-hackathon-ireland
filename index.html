@@ -215,12 +215,14 @@
       color: #999;
       margin-bottom: 14px;
     }
-    .logo-row{ display: flex; flex-wrap: wrap; justify-content: center; gap: 36px; }
-    /* Event Partners: fixed rows of 5, per client's stated layout preference
-       ("3 rows of 5 partners logos I reckon"), with room left to grow */
-    .logo-row-5{ display: grid; grid-template-columns: repeat(5, 1fr); column-gap: 36px; row-gap: 44px; max-width: 960px; margin: 0 auto; }
-    .logo-row-5 .logo-tile{ min-width: 0; }
-    @media (max-width: 700px){ .logo-row-5{ grid-template-columns: repeat(2, 1fr); } }
+    .logo-row{ display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 36px; }
+    /* Event Partners: was a fixed 5-column grid, but object-fit:contain inside
+       equal-width columns clamps wide-aspect logos down to as little as 16px
+       tall while square logos stay at full height — a real optical-balance
+       bug, not just two logos. Flex-wrap gives every logo the same fixed
+       height with its own natural (uncropped) width; still wraps to
+       roughly-even rows without forcing an artificial squeeze. */
+    .logo-row-5{ display: flex; flex-wrap: wrap; justify-content: center; align-items: center; column-gap: 36px; row-gap: 44px; max-width: 1000px; margin: 0 auto; }
     .logo-tile{
       min-width: 150px;
       height: 60px;
@@ -236,9 +238,9 @@
       padding: 6px 10px;
     }
     .logo-tile.tile-empty{ color: #c9b8ae; font-style: italic; }
-    /* Real logo supplied — plain white tile, no placeholder chrome, image scaled to fit */
-    .logo-tile.has-logo{ background: transparent; border: none; padding: 6px 14px; }
-    .logo-tile.has-logo img{ max-width: 100%; max-height: 100%; object-fit: contain; }
+    /* Real logo supplied — no placeholder chrome, fixed height, natural width */
+    .logo-tile.has-logo{ background: transparent; border: none; padding: 0; min-width: 0; height: auto; }
+    .logo-tile.has-logo img{ height: 48px; width: auto; display: block; }
 
     /* Official compliance marks (EU Presidency associated event, EU funding
        acknowledgment) — shown plain, no tile chrome, matching how these
@@ -456,7 +458,7 @@
       <!-- Official marks — supplied alongside the partner logos, not part of
            the client's original Section 1 list. Flagged to confirm inclusion. -->
       <div class="compliance-row">
-        <img src="assets/logo-eu-presidency-associated-event.png" alt="Associated Event of Ireland's EU Presidency 2026">
+        <img src="assets/logo-eu-presidency-associated-event.png" alt="Associated Event of Ireland's EU Presidency 2026" style="height: 68px;">
         <img src="assets/logo-funded-by-eu.png" alt="Funded by the European Union">
       </div>
     </div>
